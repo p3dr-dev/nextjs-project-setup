@@ -1,0 +1,32 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    './pages/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './app/**/*.{ts,tsx}',
+    './src/**/*.{ts,tsx}',
+  ],
+  theme: {
+    extend: {
+      colors: {
+        'mesa-bg': '#1B4D3E',
+        'mesa-dark': '#0F2E25',
+      },
+      animation: {
+        'card-deal': 'card-deal 0.3s ease-out forwards',
+        'card-flip': 'card-flip 0.6s ease-in-out forwards',
+      },
+      keyframes: {
+        'card-deal': {
+          '0%': { transform: 'translateY(-100%) scale(0.8)', opacity: '0' },
+          '100%': { transform: 'translateY(0) scale(1)', opacity: '1' },
+        },
+        'card-flip': {
+          '0%': { transform: 'rotateY(0deg)' },
+          '100%': { transform: 'rotateY(180deg)' },
+        },
+      },
+    },
+  },
+  plugins: [],
+}
